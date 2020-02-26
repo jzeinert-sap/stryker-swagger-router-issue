@@ -27,4 +27,22 @@ describe('app', function () {
                 });
         });
     });
+
+    it('end all troubles', function(done) {
+        let app = new SmartApplication();
+        SmartApplication.init(app).then(() => {
+
+            request(app)
+                .get('/endpoint')
+                .set('Content-Type', 'application/json')
+                .expect(200)
+                .end((err, res) => {
+                    if(err) {
+                        done(err);
+                    }
+                    expect(res.body.key).to.equal('value');
+                    done();
+                });
+        });
+    });
 });

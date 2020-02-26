@@ -14,6 +14,12 @@ class SmartApplication {
       return thing;
     }
 
+    app.get('/endpoint', function (re, res) {
+      return res.status(200).json({
+          key: 'value'
+      });
+    });
+
     return app;
   }
 
