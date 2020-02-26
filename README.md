@@ -1,5 +1,4 @@
 # stryker-swagger-router-issue
-This reproduces an issue between Stryker and the Swagger Router.
 
 # Problem
 
