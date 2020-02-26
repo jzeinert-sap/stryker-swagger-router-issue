@@ -1,0 +1,13 @@
+swagger: "2.0"
+info:
+  description: "Reproduce Stryker issue."
+  version: "1.0.0"
+  title: "Stryker Issue"
+paths:
+  /controller:
+    get:
+      x-swagger-router-controller: controller
+      operationId: "controllerOperation"
+      responses:
+        200:
+          description: "Success"
