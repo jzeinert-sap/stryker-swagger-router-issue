@@ -2,17 +2,17 @@
 const chai = require('chai');
 const expect = chai.expect;
 const request = require('supertest');
-const SmartApplication = require('./smartapp');
+const Application = require('./express-app');
 
 describe('app', function () {
-    it('should be smart', async function () {
-        let app = new SmartApplication();
+    it('should work for code outside a controller', async function () {
+        let app = new Application();
         expect(app.smart(true)).to.be.true;
     });
 
-    it('should be in control', function(done) {
-        let app = new SmartApplication();
-        SmartApplication.init(app).then(() => {
+    it('should get value when using swagger', function(done) {
+        let app = new Application();
+        Application.init(app).then(() => {
 
             request(app)
                 .get('/controller')
@@ -28,9 +28,9 @@ describe('app', function () {
         });
     });
 
-    it('end all troubles', function(done) {
-        let app = new SmartApplication();
-        SmartApplication.init(app).then(() => {
+    it('should get value when using just express', function(done) {
+        let app = new Application();
+        Application.init(app).then(() => {
 
             request(app)
                 .get('/endpoint')
