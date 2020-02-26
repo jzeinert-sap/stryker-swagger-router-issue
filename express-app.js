@@ -5,7 +5,7 @@ const SwaggerExpress = require('swagger-express-mw');
 const appRoot = require('app-root-path').toString();
 
 
-class SmartApplication {
+class Application {
 
   constructor() {
     const app = express();
@@ -37,4 +37,4 @@ class SmartApplication {
 
 }
 
-module.exports = SmartApplication;
+module.exports = Application;
