@@ -2,7 +2,7 @@ module.exports = function(config) {
   config.set({
     mutator: "javascript",
     mutate: [
-      'smartapp.js',
+      'express-app.js',
       'api/controllers/controller.js'
     ],
     packageManager: "npm",
