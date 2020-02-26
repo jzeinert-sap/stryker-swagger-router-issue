@@ -19,7 +19,6 @@
     "@stryker-mutator/javascript-mutator": "^2.5.0",
     "@stryker-mutator/mocha-framework": "^2.5.0",
     "@stryker-mutator/mocha-runner": "^2.5.0",
-    "chai": "^4.2.0",
     "mocha": ">= 2.3.3 < 7",
     "supertest": "^4.0.2"
   }

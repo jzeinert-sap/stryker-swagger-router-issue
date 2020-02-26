@@ -1,13 +1,12 @@
 'use strict'
-const chai = require('chai');
-const expect = chai.expect;
+const assert = require('assert');
 const request = require('supertest');
 const Application = require('./express-app');
 
 describe('app', function () {
     it('should work for code outside a controller', async function () {
         let app = new Application();
-        expect(app.smart(true)).to.be.true;
+        assert.strictEqual(app.smart(true), true);
     });
 
     it('should get value when using swagger', function(done) {
@@ -22,7 +21,7 @@ describe('app', function () {
                     if(err) {
                         done(err);
                     }
-                    expect(res.body.key).to.equal('value');
+                    assert.strictEqual(res.body.key, 'value');
                     done();
                 });
         });
@@ -40,7 +39,7 @@ describe('app', function () {
                     if(err) {
                         done(err);
                     }
-                    expect(res.body.key).to.equal('value');
+                    assert.strictEqual(res.body.key, 'value');
                     done();
                 });
         });
